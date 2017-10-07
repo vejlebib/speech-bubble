@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="index-wrapper">
+        <div class="slide">
+            {% for bubble in bubbles %}
+                <div class="bubble">
+                    <div class="bubble-text">
+                        <h1>{{ bubble.title }}</h1>
+                        <div class="bubble-message">
+                            <p>{{ bubble.message }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path('bubble_add') }}" class="btn btn-primary btn-lg">Hvad mener du?</a>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('slide.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#index-wrapper *:focus {
+  outline: none;
+}
+
+#index-wrapper {
+  height: 100%;
+  padding: 0 50px;
+  background-image: url(../bubble2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+/* Create button */
+#index-wrapper .btn {
+  position: absolute;
+  width: 250px;
+  left: 0;
+  right: -100px;
+  bottom: 60px;
+  margin: 0 auto;
+  background-color: #333;
+  border-color: #555;
+  padding: 20px;
+}
+
+.slide {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble {
+  padding: 0 250px;
+}
+
+.bubble-text {
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 45px;
+}
+
+.bubble-message {
+  height: 280px;
+  line-height: 280px;
+  overflow: hidden;
+}
+
+.bubble-text p {
+  font-size: 2.8rem;
+  display: inline-block;
+  line-height: normal;
+}
+
+.slide .slick-arrow {
+  color: black;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 40px;
+  line-height: 1;
+  opacity: .75;
+  color: black;
+}
+
+/* Form styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.container textarea {
+  margin: 30px 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.container .btn {
+  background-color: #333;
+  border-color: #555;
+}
