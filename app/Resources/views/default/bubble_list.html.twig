@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="bubble-list-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Message</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bubble in bubbles %}
+          <tr>
+            <td>{{ bubble.message }}</td>
+            <td><a href="{{ path('bubble_delete', {'id': bubble.id}) }}" class="btn btn-primary btn-sm">Delete</a></td>
+            <td>Edit</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

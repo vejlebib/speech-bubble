@@ -23,16 +23,47 @@ class DefaultController extends Controller
             'id' => 'DESC',
         ));
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
             'bubbles' => $bubbles,
         ]);
     }
 
     /**
+     * @Route("/bubble/list", name="bubble_list")
+     */
+    public function bubbeList() {
+        $repository = $this->getDoctrine()->getRepository(Bubble::class);
+
+        // Get all bubbles for list.
+        $bubbles = $repository->findBy(array(), array(
+            'id' => 'DESC',
+        ));
+
+        // replace this example code with whatever you need
+        return $this->render('default/bubble_list.html.twig', [
+            'bubbles' => $bubbles,
+        ]);
+    }
+
+    /**
+     * @Route("/bubble/delete/{id}", name="bubble_delete", requirements={"id": "\d+"})
+     */
+    public function bubbleDeleteAction($id, Request $request) {
+        $repository = $this->getDoctrine()->getRepository(Bubble::class);
+        $bubble = $repository->find($id);
+
+        // Remove it
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($bubble);
+        $em->flush();
+
+        return $this->redirectToRoute('bubble_list');
+    }
+
+    /**
      * @Route("/bubble/add", name="bubble_add")
      */
-    public function bubbleAddAction(Request $request, EntityManagerInterface $em)
+    public function bubbleAddAction(Request $request)
     {
         $bubble = new Bubble();
         $bubble->setTitle('Demokrati er...');

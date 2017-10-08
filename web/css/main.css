@@ -91,7 +91,8 @@ h2 {
 }
 
 /* Form styling */
-.message-form-container {
+.message-form-container,
+.bubble-list-container {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 30px;
@@ -107,4 +108,8 @@ h2 {
 .message-form-container .btn {
   background-color: #333;
   border-color: #555;
+}
+
+.bubble-list-container table {
+  text-align: left;
 }
