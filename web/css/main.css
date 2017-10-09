@@ -113,3 +113,7 @@ h2 {
 .bubble-list-container table {
   text-align: left;
 }
+
+.bubble-list-container table td {
+  vertical-align: middle;
+}
